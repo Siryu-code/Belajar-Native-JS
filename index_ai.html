@@ -1,0 +1,140 @@
+<!DOCTYPE html> <!-- memberitahu browser: ini dokumen HTML5 -->
+<html lang="id"> <!-- lang = bahasa halaman -->
+<head>
+    <meta charset="UTF-8"> <!-- supaya huruf dan simbol tampil benar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- biar pas di layar HP -->
+    <title>Latihan HTML Lengkap</title> <!-- teks yang muncul di tab browser -->
+    <style>
+        /* CSS ini cuma buat "menampakkan" kotak-kotak. Fokus belajarmu tetap di HTML. */
+        div { border: 2px solid crimson; padding: 12px; margin: 8px; }   /* semua div: kotak merah */
+        div div { border-color: royalblue; }                              /* div di dalam div: biru */
+        div div div { border-color: seagreen; }                           /* div di dalam div di dalam div: hijau */
+        header, nav, main, section, footer { border: 2px dotted purple; padding: 8px; margin: 8px; }
+        p { border: 1px dashed gray; }                                    /* p itu block: kotaknya selebar penuh */
+        span { background: gold; }                                        /* span itu inline: cuma selebar isinya */
+        #judul-utama { color: darkslateblue; }                            /* selektor id pakai # */
+        .kartu { background: #f5f5f5; }                                   /* selektor class pakai . */
+    </style>
+</head>
+<body>
+
+    <!-- header: bagian atas halaman (atau atas sebuah section) -->
+    <header>
+        <h1 id="judul-utama">Latihan HTML Lengkap</h1> <!-- h1 sampai h6: judul, h1 paling besar, idealnya satu per halaman -->
+        <nav> <!-- nav: kumpulan link navigasi -->
+            <a href="#biodata">Biodata</a> | <!-- a = link; href="#id" lompat ke elemen yang punya id itu -->
+            <a href="#demo-div">Demo Div</a> |
+            <a href="#tabel">Tabel</a> |
+            <a href="#form-daftar">Form</a> |
+            <a href="https://developer.mozilla.org" target="_blank">MDN</a> <!-- target="_blank": buka di tab baru -->
+        </nav>
+    </header>
+
+    <main> <!-- main: isi utama halaman, cukup satu -->
+
+        <section id="biodata"> <!-- section: kelompok konten bertema, biasanya punya judul -->
+            <h2>Biodata</h2>
+            <p>Namaku <strong>Uman</strong>, jurusan <em>TKJ</em>.</p> <!-- strong = penting (tebal), em = penekanan (miring) -->
+            <p>Ini <span>teks inline</span> di tengah kalimat.</p> <!-- span: pembungkus inline, tidak memecah baris -->
+            <img src="foto.jpg" alt="Foto profil" width="200"> <!-- img: elemen kosong (tanpa tag penutup), atribut alt jangan lupa -->
+
+            <h3>Skill</h3>
+            <ul> <!-- ul: daftar tak berurut (bullet) -->
+                <li>HTML</li> <!-- li: satu item daftar -->
+                <li>CSS</li>
+            </ul>
+            <ol> <!-- ol: daftar berurut (angka) -->
+                <li>Belajar HTML</li>
+                <li>Belajar CSS</li>
+            </ol>
+        </section>
+
+        <section id="demo-div">
+            <h2>Demo div</h2>
+            <div class="wadah"> <!-- wadah luar: biasanya untuk tata letak keseluruhan -->
+                <div class="kartu" data-id="1"> <!-- data-id = atribut buatan sendiri, nanti dibaca JS -->
+                    <h3>Kartu 1</h3>
+                    <div>Kotak paling dalam</div> <!-- div boleh bersarang sedalam yang dibutuhkan -->
+                </div>
+                <div class="kartu" data-id="2"> <!-- class yang sama boleh dipakai banyak elemen -->
+                    <h3>Kartu 2</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="tabel">
+            <h2>Tabel skor</h2>
+            <table border="2"> <!-- table: tabel -->
+                <thead> <!-- thead: bagian judul kolom -->
+                    <tr> <!-- tr: satu baris -->
+                        <th>Nama</th> <!-- th: sel judul -->
+                        <th>Skor</th>
+                    </tr>
+                </thead>
+                <tbody> <!-- tbody: bagian isi tabel -->
+                    <tr>
+                        <td>Budi</td> <!-- td: sel data -->
+                        <td>100</td>
+                    </tr>
+                </tbody>
+                <tfoot> <!-- tfoot: bagian footer tabel -->
+                    <tr>
+                        <td>Total</td>
+                        <td>100</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="form-daftar">
+            <h2>Form</h2>
+            <form action="#" method="post"> <!-- form: pembungkus semua input. action = tujuan data, method = cara kirim -->
+                <div>
+                    <label for="username">Username</label> <!-- for harus sama dengan id input di bawahnya -->
+                    <input type="text" id="username" name="username" placeholder="Nama kamu" required>
+                    <!-- type = jenis input, name = nama data, placeholder = teks petunjuk, required = wajib diisi -->
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password kamu" required> <!-- type="password": karakter disamarkan -->
+                </div>
+                <div>
+                    <label for="level">Difficulty</label>
+                    <select id="level" name="level"> <!-- select: dropdown -->
+                        <option value="easy">Easy</option> <!-- option: satu pilihan, value = data yang dikirim -->
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <div>
+                    Mode:
+                    <input type="radio" id="solo" name="mode" value="solo" checked> <!-- radio: pilih satu saja, name sama = satu grup -->
+                    <label for="solo">Solo</label>
+                    <input type="radio" id="duo" name="mode" value="duo">
+                    <label for="duo">Duo</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="setuju" name="setuju"> <!-- checkbox: boleh centang lebih dari satu -->
+                    <label for="setuju">Saya setuju</label>
+                    <input type="checkbox" id="ikut" name="ikut">
+                    <label for="ikut">Saya ikut</label>
+                </div>
+                <div>
+                    <label for="catatan">Catatan</label>
+                    <textarea id="catatan" name="catatan" rows="3" placeholder="Tulis catatan Anda..."></textarea> <!-- textarea: teks panjang, tag penutup wajib -->
+                </div>
+                <button type="submit">Kirim</button> <!-- type="submit": mengirim form -->
+                <button type="button" id="btn-lain">Tombol biasa</button> <!-- type="button": tidak mengirim form -->
+            </form>
+        </section>
+
+    </main>
+
+    <footer> <!-- footer: bagian bawah halaman -->
+        <p>&copy; 2026 Latihan HTML</p> <!-- &copy; = entity, cara menulis simbol khusus -->
+    </footer>
+
+    <!-- <script src="app.js"></script> -->
+    <!-- script biasanya ditaruh paling bawah body supaya elemen di atasnya sudah ada saat JS jalan -->
+</body>
+</html>
