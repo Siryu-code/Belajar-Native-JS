@@ -1,0 +1,224 @@
+Software Requirements Specification (SRS)
+Proyek: Halaman Web Single-Page "Latihan HTML Lengkap"
+1. Pendahuluan
+Dokumen ini berisi spesifikasi kebutuhan teknis untuk membangun halaman web statis Latihan HTML Lengkap. Dokumen ini bertujuan untuk menguji pemahaman pengembang (siswa) dalam mengimplementasikan elemen-elemen HTML5 sesuai dengan standar semantik, struktur dokumen, penanganan elemen inline/block, tabel, serta formulir.
+
+2. Kebutuhan Umum Dokumen (Document Metas & Setup)
+Setiap halaman HTML5 harus memiliki struktur dasar dan konfigurasi meta data yang valid:
+
+Deklarasi Dokumen:
+
+Harus menggunakan standar HTML5 di baris pertama.
+
+💡 Hint: Gunakan <!DOCTYPE html>.
+
+Bahasa & Kode Karakter:
+
+Bahasa dokumen diatur ke bahasa Indonesia (id).
+
+Pengodean karakter disetel ke UTF-8 agar simbol dapat tampil dengan benar.
+
+Responsivitas Layar:
+
+Harus menyertakan pengaturan viewport agar tampilan menyesuaikan ukuran layar perangkat mobile.
+
+💡 Hint: <meta name="viewport" content="width=device-width, initial-scale=1.0">.
+
+Judul Tab Browser:
+
+Teks pada tab browser harus menampilkan "Belajar HTML".
+
+Gaya Visual (CSS Inline/Embedded):
+
+Di dalam <head>, sediakan tag <style> berikut untuk mempermudah visualisasi batas-batas elemen:
+
+CSS
+div { border: 2px solid crimson; padding: 12px; margin: 8px; }
+div div { border-color: royalblue; }
+div div div { border-color: seagreen; }
+header, nav, main, section, footer { border: 2px dotted purple; padding: 8px; margin: 8px; }
+p { border: 1px dashed gray; }
+span { background: gold; }
+#judul-utama { color: darkslateblue; }
+.kartu { background: #f5f5f5; }
+3. Kebutuhan Semantik & Struktur Halaman (<body>)
+Halaman utama dibagi menjadi 3 blok semantik utama: <header>, <main>, dan <footer>.
+
+3.1 Header (<header>)
+Menyimpan judul utama halaman menggunakan level heading tertinggi (<h1>) dengan ID judul-utama dan teks "Latihan HTML Lengkap".
+
+Menyertakan elemen navigasi (<nav>) yang berisi menu tautan internal (anchor link) yang dipisahkan oleh karakter pipe (|):
+
+Tautan ke bagian Biodata (menuju ke #biodata).
+
+Tautan ke bagian Demo Div (menuju ke #demo-div).
+
+Tautan ke bagian Tabel (menuju ke #tabel).
+
+Tautan ke bagian Form (menuju ke #form-daftar).
+
+Tautan eksternal menuju [https://developer.mozilla.org](https://developer.mozilla.org) dengan teks "MDN" yang wajib dibuka di tab baru.
+
+💡 Hint: Gunakan atribut target="_blank" pada tag <a>.
+
+3.2 Main Content (<main>)
+Seluruh konten utama wajib dibungkus di dalam tag <main> dan dibagi menjadi 4 bagian (<section>):
+
+Section 1: Biodata (id="biodata")
+Judul Section: Heading level 2 (<h2>) dengan teks "Biodata".
+
+Paragraf 1: Teks "Namaku Uman, jurusan TKJ."
+
+Teks "Uman" harus dicetak tebal semantik (bukan sekadar <b>).
+
+💡 Hint: Gunakan tag <strong>.
+
+Teks "TKJ" harus diberi penekanan miring.
+
+💡 Hint: Gunakan tag <em>.
+
+Paragraf 2: Teks "Ini [teks inline] di tengah kalimat."
+
+Frasa "teks inline" wajib dibungkus tag <span> tanpa memutus/memecah baris teks.
+
+Gambar Profil:
+
+Menampilkan gambar dari file foto.jpg.
+
+Lebar gambar diatur menjadi 200 piksel.
+
+Harus menyertakan teks alternatif (alt text) bernilai "Foto profil".
+
+💡 Hint: <img src="..." alt="..." width="..."> adalah elemen self-closing (tanpa penutup).
+
+Daftar Skill:
+
+Sub-judul Heading level 3 (<h3>) bernilai "Skill".
+
+Daftar Tak Berurut (Unordered List): Berisi 2 item (bullet point): HTML dan CSS.
+
+💡 Hint: Gunakan <ul> dan <li>.
+
+Daftar Berurut (Ordered List): Berisi 2 item bernomor: 1. Belajar HTML dan 2. Belajar CSS.
+
+💡 Hint: Gunakan <ol> dan <li>.
+
+Section 2: Demo Div (id="demo-div")
+Judul Section: Heading level 2 (<h2>) bernilai "Demo div".
+
+Wadah Utama: Dibuat menggunakan tag <div> dengan kelas (class) bernama wadah.
+
+Struktur Kartu: Di dalam div .wadah, buat 2 struktur kartu sebagai berikut:
+
+Kartu 1:
+
+Menggunakan <div> dengan class kartu dan atribut kustom data-id bernilai 1.
+
+💡 Hint: Gunakan atribut HTML5 custom data: data-id="1".
+
+Berisi Heading level 3 (<h3>) "Kartu 1".
+
+Di bawah h3, terdapat <div> bersarang yang berisi teks "Kotak paling dalam".
+
+Kartu 2:
+
+Menggunakan <div> dengan class kartu dan atribut data-id="2".
+
+Berisi Heading level 3 (<h3>) "Kartu 2".
+
+Section 3: Tabel Skor (id="tabel")
+Judul Section: Heading level 2 (<h2>) bernilai "Tabel skor".
+
+Elemen Tabel: Dibuat menggunakan tag <table> dengan ketebalan border bernilai 2.
+
+Struktur Tabel Terbagi Menjadi 3 Bagian Semantik:
+
+Header Tabel (<thead>): Memiliki 1 baris (<tr>) yang terdiri dari 2 sel header (<th>): "Nama" dan "Skor".
+
+Isi Tabel (<tbody>): Memiliki 1 baris data (<tr>) yang terdiri dari 2 sel data (<td>): "Uman" dan "100".
+
+Footer Tabel (<tfoot>): Memiliki 1 baris (<tr>) yang terdiri dari 2 sel data (<td>): "Total" dan "100".
+
+Section 4: Formulir Pendaftaran (id="form-daftar")
+Judul Section: Heading level 2 (<h2>) bernilai "Form".
+
+Elemen Form: Menggunakan tag <form> dengan atribut action="#" dan method="post".
+
+Setiap komponen input di bawah ini dianjurkan dibungkus di dalam tag <div> terpisah untuk kerapian tata letak:
+
+Input Username:
+
+Label dengan atribut for="username" bernilai "Username".
+
+Field input tipe teks (type="text"), ID username, Name username, teks petunjuk/placeholder "Nama kamu", dan wajib diisi.
+
+💡 Hint: Hubungkan label dan input menggunakan ID yang sama. Tambahkan atribut required.
+
+Input Password:
+
+Label dengan atribut for="password" bernilai "Password".
+
+Field input tipe password (type="password"), ID password, Name password, placeholder "Password kamu", dan wajib diisi.
+
+Pilihan Dropdown (Difficulty):
+
+Label dengan atribut for="level" bernilai "Difficulty".
+
+Elemen <select> dengan ID level dan Name level.
+
+Pilihan opsi (<option>):
+
+Option 1: Value easy, Teks "Easy"
+
+Option 2: Value medium, Teks "Medium"
+
+Option 3: Value hard, Teks "Hard"
+
+Pilihan Radio Button (Mode):
+
+Teks label luar: "Mode:".
+
+Pilihan Radio 1: Tipe radio, ID solo, Name mode, Value solo, tercentang secara default (checked). Diberi label terhubung "Solo".
+
+Pilihan Radio 2: Tipe radio, ID duo, Name mode, Value duo. Diberi label terhubung "Duo".
+
+💡 Hint: Agar kedua radio button saling mengunci (hanya bisa dipilih salah satu), atribut name keduanya harus persis sama (name="mode").
+
+Pilihan Checkbox:
+
+Checkbox 1: Tipe checkbox, ID setuju, Name setuju, terhubung dengan label "Saya setuju".
+
+Checkbox 2: Tipe checkbox, ID ikut, Name ikut, terhubung dengan label "Saya ikut".
+
+Input Teks Panjang (Catatan):
+
+Label dengan atribut for="catatan" bernilai "Catatan".
+
+Elemen <textarea> dengan ID catatan, Name catatan, tinggi baris 3 (rows="3"), dan placeholder "Tulis catatan Anda...".
+
+💡 Hint: <textarea> membutuhkan tag penutup (</textarea>).
+
+Tombol Form:
+
+Tombol 1: Tombol bertipe submit (type="submit") dengan label teks "Kirim".
+
+Tombol 2: Tombol biasa bertipe button (type="button"), ID btn-lain, dengan label teks "Tombol biasa".
+
+3.3 Footer (<footer>)
+Berisi paragraf yang menampilkan hak cipta menggunakan entitas karakter khusus HTML: "© 2026 Latihan HTML".
+
+💡 Hint: Gunakan entitas &copy; untuk mencetak simbol ©.
+
+3.4 Komentar & Script
+Di akhir dokumen (sebelum penutup </body>), tambahkan baris kode JavaScript eksternal yang di-comment out sebagai referensi pengembangan masa depan.
+
+💡 Hint: <!-- <script src="script.js"></script> -->.
+
+4. Ringkasan Kriteria Penilaian Pemahaman
+Validasi Tag Semantik: Penggunaan <header>, <nav>, <main>, <section>, <footer>, <strong>, dan <em> dengan tepat.
+
+Atribut dan Keterhubungan: Ketepatan memasangkan for pada <label> dengan id pada elemen input.
+
+Struktur Bersarang (Nesting): Kerapian pembuatan struktur elemen di dalam elemen (terutama pada <div> bersarang dan elemen <table>).
+
+Detail Atribut: Penggunaan atribut penting seperti alt, target, required, placeholder, rows, dan data-*.

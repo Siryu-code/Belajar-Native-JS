@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar HTML</title>
+    <style>
+        /* CSS ini cuma buat "menampakkan" kotak-kotak. Fokus belajarmu tetap di HTML. */
+        div { border: 2px solid crimson; padding: 12px; margin: 8px; }   /* semua div: kotak merah */
+        div div { border-color: royalblue; }                              /* div di dalam div: biru */
+        div div div { border-color: seagreen; }                           /* div di dalam div di dalam div: hijau */
+        header, nav, main, section, footer { border: 2px dotted purple; padding: 8px; margin: 8px; }
+        p { border: 1px dashed gray; }                                    /* p itu block: kotaknya selebar penuh */
+        span { background: gold; }                                        /* span itu inline: cuma selebar isinya */
+        #judul-utama { color: darkslateblue; }                            /* selektor id pakai # */
+        .kartu { background: #f5f5f5; }                                   /* selektor class pakai . */
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 id="judul-utama">Belajar HTML</h1>
+        <nav>
+            <a href="#biodata">Biodata</a> |
+            <a href="#demo-div">Demo Div</a> |
+            <a href="#tabel">Tabel</a> |
+            <a href="#form-daftar">Form</a> |
+            <a href="#https://developer.mozilla.org" target="_blank">MDN</a> |
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="biodata">
+            <h2>Biodata</h2>
+            <p>Namaku <strong>Uman</strong>, Jurusan <em>TKJ</em>.</p>
+            <p>Ini <span>teks inline</span> di tengah kalimat.</p>
+            <img src="foto.png" alt="Foto Profil" width="200">
+
+            <h3>Skill</h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+            </ul>
+            <ol>
+                <li>Belajar HTML</li>
+                <li>Belajar CSS</li>
+            </ol>
+        </section>
+
+        <section id="demo-div">
+            <h2>Demo Div</h2>
+            <div class="wadah">
+                <div class="kartu" data-id="1">
+                    <h3>Kartu 1</h3>
+                    <div>Kotak paling dalam</div>
+                </div>
+                <div class="kartu" data-id="2">
+                    <h3>Kartu 2</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="tabel">
+            <h2>Tabel Skor</h2>
+            <table border="2">
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Skor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Uman</td>
+                        <td>100</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total</td>
+                        <td>100</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="form-daftar">
+            <h2>Form</h2>
+            <form action="#" method="post">
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Nama Kamu" required>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password Kamu" required>
+                </div>
+                <div>
+                    <label for="level">Difficulty</label>
+                    <select name="level" id="level">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <div>
+                    Mode:
+                    <input type="radio" id="solo" name="mode" value="solo" checked>
+                    <label for="solo">Solo</label>
+                    <input type="radio" id="duo" name="mode" value="duo">
+                    <label for="duo">Duo</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="setuju" name="setuju">
+                    <label for="setuju">Saya Setuju</label>
+                    <input type="checkbox" id="ikut" name="ikut">
+                    <label for="ikut">Saya Ikut</label>
+                </div>
+                <div>
+                    <label for="catatan">Catatan</label>
+                    <textarea id="catatan" name="catatan" rows="3" placeholder="Tulis catatan Anda..."></textarea>
+                </div>
+                <button type="submit">Kirim</button>
+                <button type="button" id="btn-lain">Tombol Biasa</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Latihan HTML</p>
+    </footer>
+
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>
