@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOMBSKUY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="header-game">
+        <h1 class="judul">BOMBSKUY</h1>
+        <p class="subjudul">Hancurkan Dinding, Raih Poin Tertinggi</p>
+    </header>
+
+    <main>
+        <div class="wadah">
+            <section class="kartu" id="form-mulai">
+                <h2>Mulai Permainan</h2>
+                <form action="#">
+                    <div class="grup-input">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Masukkan Nama Kamu" required maxlength="12">
+                    </div>
+                    <div class="grup-input">
+                        <label for="level">Level</label>
+                        <select name="level" id="level">
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="grup-input">
+                        <span class="teks-label">Mode</span>
+                        <div class="baris-pilihan">
+                            <input type="radio" name="mode" id="solo" value="solo" checked>
+                            <label for="solo">Solo</label>
+                        </div>
+                        <div class="baris-pilihan">
+                            <input type="radio" name="mode" id="duo" value="duo">
+                            <label for="duo">Duo</label>
+                        </div>
+                    </div>
+                    <div class="grup-input">
+                        <div class="baris-pilihan">
+                            <input type="checkbox" name="suara" id="suara">
+                            <label for="suara">Aktifkan Suara</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="tombol-main">Mulai</button>
+                </form>
+            </section>
+            <section class="kartu" id="papan-skor">
+                <h2>Papan Skor</h2>
+                <table class="tabel-skor">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Skor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td>Ubay</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>Rizky</td>
+                            <td>90</td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>Fajar</td>
+                            <td>80</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer-game">
+        <p>&copy; 2026 BOMBSKUY</p>
+    </footer>
+</body>
+</html>

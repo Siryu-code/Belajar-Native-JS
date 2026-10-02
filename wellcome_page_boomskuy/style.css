@@ -1,0 +1,96 @@
+/* ===== Reset kecil: biar ukuran kotak lebih mudah dihitung ===== */
+* { box-sizing: border-box; }
+
+/* ===== Dasar halaman ===== */
+body {
+    margin: 0;                                  /* hilangkan jarak bawaan browser */
+    font-family: Arial, sans-serif;
+    background: #1e1e2f;                        /* latar gelap */
+    color: #f1f1f1;                             /* warna teks */
+}
+
+/* ===== Header ===== */
+.header-game {
+    text-align: center;                         /* teks rata tengah */
+    padding: 24px 12px;                         /* jarak DALAM kotak */
+    background: #2c2c44;
+}
+.judul {
+    margin: 0;
+    color: #ff9f43;
+    letter-spacing: 4px;                        /* jarak antar huruf */
+}
+.subjudul {
+    margin: 6px 0 0;                            /* atas 6px, kanan 0, bawah 0 */
+    color: #b8b8d1;
+}
+
+/* ===== Wadah: div pembungkus yang mengatur lebar & posisi tengah ===== */
+.wadah {
+    max-width: 480px;                           /* lebar maksimal */
+    margin: 24px auto;                          /* auto kiri-kanan = ke tengah */
+    padding: 0 12px;
+}
+
+/* ===== Kartu ===== */
+.kartu {
+    background: #2c2c44;
+    border-radius: 12px;                        /* sudut membulat */
+    padding: 20px;
+    margin-bottom: 20px;                        /* jarak LUAR ke kartu di bawahnya */
+}
+.kartu h2 { margin-top: 0; }                    /* h2 yang ada DI DALAM .kartu */
+#form-mulai { border-top: 4px solid #ff9f43; }  /* selektor id: khusus 1 elemen */
+
+/* ===== Form ===== */
+.grup-input { margin-bottom: 14px; }
+.grup-input label {
+    display: block;                             /* label jadi block: turun ke baris sendiri */
+    margin-bottom: 6px;
+}
+.teks-label {
+    display: block;                             /* span itu inline, ini mengubahnya jadi block */
+    margin-bottom: 6px;
+}
+.grup-input input[type="text"],
+.grup-input select {                            /* selektor atribut: hanya input bertipe text */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+}
+.baris-pilihan label {                          /* untuk radio & checkbox: label di samping */
+    display: inline;
+    margin-left: 6px;
+}
+
+/* ===== Tombol ===== */
+.tombol-main {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #ff9f43;
+    font-weight: bold;
+    cursor: pointer;                            /* kursor jadi tangan */
+}
+.tombol-main:hover { background: #ffb86c; }     /* :hover = saat kursor di atasnya */
+
+/* ===== Tabel ===== */
+.tabel-skor {
+    width: 100%;
+    border-collapse: collapse;                  /* garis antar sel menyatu */
+}
+.tabel-skor th,
+.tabel-skor td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #44445f;
+}
+
+/* ===== Footer ===== */
+.footer-game {
+    text-align: center;
+    padding: 16px;
+    color: #8888aa;
+}
