@@ -1,0 +1,126 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #1e1e2f;
+    color: #f1f1f1;
+}
+
+/* ===== Header ===== */
+.header-game {
+    text-align: center;
+    padding: 20px 12px;
+    background: #2c2c44;
+}
+.judul {
+    margin: 0;
+    color: #ff9f43;
+    letter-spacing: 4px;
+}
+
+/* ===== HUD: info pemain, skor, nyawa, waktu ===== */
+.hud {
+    display: flex;                              /* flex: anak-anaknya berjajar menyamping */
+    gap: 8px;                                   /* jarak antar anak */
+    max-width: 560px;
+    margin: 16px auto;
+    padding: 0 12px;
+}
+.hud-item {
+    flex: 1;                                    /* semua item berbagi lebar sama rata */
+    background: #2c2c44;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+.hud-label {
+    display: block;                             /* kalau tag-mu span, ini bikin dia turun baris */
+    font-size: 12px;
+    color: #b8b8d1;
+}
+.hud-nilai {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff9f43;
+}
+
+/* ===== Area game: grid 7 kolom ===== */
+#game {
+    display: grid;                              /* grid: anak-anaknya disusun jadi baris dan kolom */
+    grid-template-columns: repeat(7, 1fr);      /* 7 kolom sama lebar; sisanya turun ke baris baru */
+    gap: 4px;
+    max-width: 560px;
+    margin: 0 auto 16px;
+    padding: 12px;
+    background: #2c2c44;
+    border-radius: 12px;
+}
+.cell {
+    aspect-ratio: 1 / 1;                        /* petak selalu persegi */
+    background: #3b3b5c;
+    border-radius: 6px;
+}
+.cell:hover { background: #55557a; }
+
+/* ===== Panel kontrol ===== */
+.panel-kontrol {
+    display: flex;
+    justify-content: center;                    /* anak-anak flex dirapatkan ke tengah */
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.tombol {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #ff9f43;
+    font-weight: bold;
+    cursor: pointer;
+}
+.tombol:hover { background: #ffb86c; }
+
+/* ===== Legenda ===== */
+.legenda {
+    list-style: none;                           /* hilangkan bullet bawaan ul */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0 0 24px;
+}
+.ikon {
+    display: inline-block;                      /* tetap segaris seperti inline, tapi bisa diatur lebar & tinggi */
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+.ikon-dinding { background: #8d6e63; }
+.ikon-bom { background: #e74c3c; }
+.ikon-pemain { background: #2ecc71; }
+
+/* ===== Modal game over ===== */
+.modal {
+    position: fixed;                            /* menempel di layar, tidak ikut scroll */
+    inset: 0;                                   /* sama dengan top/right/bottom/left: 0 (menutupi layar) */
+    display: flex;
+    align-items: center;                        /* rata tengah vertikal */
+    justify-content: center;                    /* rata tengah horizontal */
+    background: rgba(0, 0, 0, 0.7);             /* hitam transparan */
+}
+.modal-isi {
+    background: #2c2c44;
+    padding: 24px 32px;
+    border-radius: 12px;
+    text-align: center;
+}
+.sembunyi { display: none; }                    /* ditaruh SETELAH .modal supaya menang saat bentrok */
+
+/* ===== Footer ===== */
+.footer-game {
+    text-align: center;
+    padding: 16px;
+    color: #8888aa;
+}
