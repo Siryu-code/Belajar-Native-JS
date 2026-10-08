@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kamus JS - Halaman Latihan</title>
+  <style>
+    /* Dipakai oleh contoh classList di script.js (bagian 10). Abaikan dulu. */
+    .tebal { font-weight: bold; }
+    #kotakHover { border: 1px solid #999; padding: 12px; margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <h1>Halaman latihan kamus JS</h1>
+  <p>Buka Console (F12) untuk melihat hasil <code>console.log</code>. Bagian di bawah dipakai oleh bagian 10 (DOM) dan 11 (Event) di <code>script.js</code>.</p>
+
+  <hr>
+  <h2>Area DOM (bagian 10)</h2>
+  <div id="areaDom" data-kode="A1">
+    <h3 id="judulDom">Halo</h3>
+    <p class="catatan">Catatan 1</p>
+    <p class="catatan">Catatan 2</p>
+    <ul id="daftarDom">
+      <li>Apel</li>
+    </ul>
+    <input id="kolomDom" type="text" value="Kai">
+  </div>
+
+  <hr>
+  <h2>Area Event (bagian 11)</h2>
+  <div id="areaEvent">
+    <p>
+      <button id="tombolEvent">Klik aku</button>
+      <button id="tombolSekali">Klik (hanya berlaku sekali)</button>
+    </p>
+
+    <p>
+      <input id="kolomEvent" type="text" placeholder="ketik sesuatu, lalu Enter / Tambah">
+      <button id="tombolTambah">Tambah</button>
+    </p>
+    <p id="hasilEvent"></p>
+    <ul id="daftarEvent"></ul>
+    <p>Klik item daftar di atas untuk menghapusnya.</p>
+
+    <div id="kotakHover">Arahkan kursor ke kotak ini</div>
+
+    <form id="formEvent">
+      <input id="formInput" type="text" placeholder="isi form">
+      <button type="submit">Kirim</button>
+    </form>
+
+    <p>
+      <button class="btn">A</button>
+      <button class="btn">B</button>
+      <button class="btn">C</button>
+    </p>
+  </div>
+
+  <!-- Taruh di paling bawah, supaya semua elemen di atas sudah ada saat JS jalan -->
+  <script src="script.js"></script>
+</body>
+</html>
